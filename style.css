@@ -3,11 +3,53 @@ body {
     color: white;
 }
 
-.center{
+.center {
     position: absolute;
     top: 50%;
     left: 50%;
-    -ms-transform: translate(-50%,-50%);
-    -webkit-transform : translate(-50%,-50%);
-    transform : translate(-50%,-50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.cross {
+    position: fixed;
+    padding-right: 10px;
+    transition: all 0.8s;
+}
+
+.introduction{
+    text-align: center;
+}
+
+/*.param{
+    width: 0;
+    height: 0;
+    font-size: 0;
+    transition: all 0.8s;
+}*/
+
+.cross:hover {
+    transform: rotateZ(45deg);
+}
+.param{
+    opacity: 0;
+}
+.cross:hover + .param {
+    transform-origin: 0 0;
+    animation-name: animation;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes animation {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
