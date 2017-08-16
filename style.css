@@ -29,19 +29,45 @@ body {
     transition: all 0.8s;
 }*/
 
-.cross:hover {
-    transform: rotateZ(45deg);
+.cross {
+    transform-origin: 50% 50%;
+    animation-name: rotation;
+    animation-duration: 0.8s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
 }
+
 .param{
-    opacity: 0;
-}
-.cross:hover + .param {
     transform-origin: 0 0;
     animation-name: animation;
     animation-duration: 0.8s;
-    animation-fill-mode: forwards;
+    animation-fill-mode: both;
 
 }
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+
+    25% {
+        transform: rotate(90deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    75%{
+        transform: rotate(270deg);
+    }
+    100%{
+        transform: rotate(360deg);
+
+    }
+}
+
 
 @keyframes animation {
     from {
